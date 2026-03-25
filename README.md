@@ -35,24 +35,6 @@ A university course project for **Embedded Systems & IoT**. Uses an ESP32-CAM to
 | 9 | 5V Power Supply (optional) | 1 | If USB power is insufficient for servo |
 
 ---
-
-## System Architecture
-
-```
- ┌─────────────────────────────────────────────────────────────┐
- │                      WiFi Network                          │
- │                                                             │
- │   ┌──────────────┐         HTTP         ┌───────────────┐  │
- │   │  ESP32-CAM   │◄───────────────────►│ ESP32 DevKit  │  │
- │   │  (Arduino)   │   GET /capture       │ (MicroPython) │  │
- │   │              │   returns JPEG       │               │  │
- │   └──────────────┘                      │  ┌─────────┐  │  │
- │                                         │  │ PIR IN  │──┼──┼── SR602 (Entry)
- │   ┌──────────────┐                      │  │ PIR OUT │──┼──┼── SR602 (Exit)
- │   │  Cloud API   │◄──HTTP POST image──►│  │ SERVO   │──┼──┼── SG90 Barrier
- │   │  (Gemini)    │   returns plate text │  └─────────┘  │  │
- │   └──────────────┘                      └───────────────┘  │
- └─────────────────────────────────────────────────────────────┘
 ```
 
 **Flow**: PIR detects car → DevKit requests image from ESP32-CAM → Image sent to Gemini API → Plate logged → Servo opens gate → Car passes → Servo closes gate.
@@ -91,22 +73,7 @@ A university course project for **Embedded Systems & IoT**. Uses an ESP32-CAM to
 
 ### SR602 PIR Sensor Pin Identification
 
-```
-    ┌──────────┐
-    │  SR602   │
-    │  ┌───┐  │
-    │  │   │  │
-    │  │PIR│  │
-    │  │   │  │
-    │  └───┘  │
-    │          │
-    └─┤ ┤ ┤───┘
-      1  2  3
 
-  1 = OUT (Signal)
-  2 = GND
-  3 = VCC (3.3V–9V)
-```
 
 > **Note**: Pin numbering may vary by manufacturer — check your specific module's markings.
 
