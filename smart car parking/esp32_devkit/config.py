@@ -5,13 +5,13 @@
 # ============================================================
 
 # ─── WiFi ────────────────────────────────────────────────────
-WIFI_SSID     = "iPhone"       # ← Change this
-WIFI_PASSWORD = "natty007"   # ← Change this
+WIFI_SSID     = "XXX"       # ← Change this
+WIFI_PASSWORD = "xxx"   # ← Change this
 
 # ─── ESP32-CAM address ───────────────────────────────────────
 # The IP address your ESP32-CAM gets on the network.
 # Check the Serial Monitor of the ESP32-CAM after it boots.
-CAM_HOST = "172.20.10.10"   # ← Change to your ESP32-CAM IP
+CAM_HOST = "xxx"   # ← Change to your ESP32-CAM IP
 CAM_PORT = 80
 
 # ─── GPIO Pin Assignments (ESP32 DevKit) ─────────────────────
