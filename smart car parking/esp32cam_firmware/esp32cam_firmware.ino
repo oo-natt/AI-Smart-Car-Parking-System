@@ -23,8 +23,8 @@
 #include <WebServer.h>
 
 // ─── WiFi credentials ────────────────────────────────────────
-const char* ssid     = "iPhone";      // ← Change this
-const char* password = "natty007";   // ← Change this
+const char* ssid     = "xxx";      // ← Change this
+const char* password = "xxx";   // ← Change this
 
 // ─── AI-Thinker ESP32-CAM pin mapping ────────────────────────
 #define PWDN_GPIO_NUM     32
